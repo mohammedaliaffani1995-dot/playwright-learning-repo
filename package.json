@@ -1,0 +1,39 @@
+{
+  "name": "playwright-learning-repo",
+  "version": "1.0.0",
+  "description": "A beginner-friendly Playwright TypeScript learning repository for QA engineers and manual testers.",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --project=chromium",
+    "test:browsers": "playwright test",
+    "test:ui": "playwright test tests/ui --project=chromium",
+    "test:ui:browsers": "playwright test tests/ui",
+    "test:ui:beginner": "playwright test tests/ui/beginner --project=chromium",
+    "test:ui:intermediate": "playwright test tests/ui/intermediate --project=chromium",
+    "test:ui:advanced": "playwright test tests/ui/advanced --project=chromium",
+    "test:tag:smoke": "playwright test --grep @smoke --project=chromium",
+    "test:tag:advanced": "playwright test --grep @advanced --project=chromium",
+    "test:api": "playwright test tests/api --project=chromium",
+    "test:api:beginner": "playwright test tests/api/beginner --project=chromium",
+    "test:api:intermediate": "playwright test tests/api/intermediate --project=chromium",
+    "test:api:advanced": "playwright test tests/api/advanced --project=chromium",
+    "test:api:negative": "playwright test tests/api --grep @negative --project=chromium",
+    "test:api:tag:advanced": "playwright test tests/api --grep @api-advanced --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui-mode": "playwright test --ui",
+    "report": "playwright show-report",
+    "report:playwright": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "examples:ts": "tsx examples/typescript-basics/run-all.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^22.15.30",
+    "ajv": "^8.17.1",
+    "allure-playwright": "^3.9.0",
+    "dotenv": "^16.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

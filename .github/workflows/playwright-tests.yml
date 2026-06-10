@@ -1,0 +1,57 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Playwright tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the repository code into the GitHub Actions runner.
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # Install Node.js for npm and Playwright.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Install exact dependencies from package-lock.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # Install Playwright browsers and Linux system dependencies.
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # Run the tests. Reports and traces are still uploaded if this step fails.
+      - name: Run Playwright tests
+        run: npx playwright test
+
+      # Upload the native Playwright HTML report.
+      - name: Upload Playwright HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: playwright-report/
+          retention-days: 14
+
+      # Upload raw Allure results written by the Playwright reporter.
+      - name: Upload Allure raw results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-raw-results
+          path: allure-results/
+          retention-days: 14

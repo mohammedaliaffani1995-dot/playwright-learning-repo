@@ -1,0 +1,15 @@
+{
+  "checkoutCustomer": {
+    "firstName": "Alex",
+    "lastName": "Tester",
+    "postalCode": "12345"
+  },
+  "products": {
+    "backpack": "Sauce Labs Backpack",
+    "bikeLight": "Sauce Labs Bike Light",
+    "boltTShirt": "Sauce Labs Bolt T-Shirt"
+  },
+  "sortOptions": {
+    "nameZToA": "za"
+  }
+}

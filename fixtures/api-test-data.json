@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://jsonplaceholder.typicode.com",
+  "postIds": [1, 2, 3],
+  "userIds": [1, 2, 3],
+  "newPost": {
+    "title": "Intermediate API test post",
+    "body": "This request body comes from a fixture file.",
+    "userId": 1
+  },
+  "replacePost": {
+    "id": 1,
+    "title": "Fully replaced post title",
+    "body": "PUT replaces the full resource in this example.",
+    "userId": 1
+  },
+  "updatePost": {
+    "title": "Partially updated post title"
+  },
+  "missingFieldsPost": {
+    "title": "Post with missing fields"
+  }
+}

@@ -1,0 +1,13 @@
+import './01-variables';
+import './02-strings';
+import './03-numbers';
+import './04-booleans';
+import './05-arrays';
+import './06-objects';
+import './07-functions';
+import './08-arrow-functions';
+import './09-conditions';
+import './10-loops';
+import './11-basic-types';
+import './12-async-await';
+import './13-imports-exports';
